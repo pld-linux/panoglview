@@ -1,15 +1,18 @@
 Summary:	OpenGL-based panorama viewer
 Summary(pl):	Oparta na OpenGL-u przegl±darka panoram
 Name:		panoglview
-Version:	0.2
+Version:	0.2.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/hugin/%{name}-%{version}.tar.gz
-# Source0-md5:	8e8f391ed85d8def1d06f87a84f65167
+# Source0-md5:	0acb180b81997aa8c08d03ff9dfd2437
+Patch0:		%{name}-link.patch
 URL:		http://hugin.sourceforge.net/
 BuildRequires:	OpenGL-devel
-BuildRequires:	sed >= 4.0
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool >= 2:1.5
 #BuildRequires:	tuvista-devel (for plugin) - ??? found only tuvionlib and vistalab
 BuildRequires:	wxGTK2-gl-devel >= 2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,11 +25,15 @@ Oparta na OpenGL-u przegl±darka panoram.
 
 %prep
 %setup -q
-
-sed -i -e 's/wx-config/wx-gtk2-ansi-config/g' configure
+%patch0 -p1
 
 %build
-%configure
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure \
+	WX_CONFIG_NAME=wx-gtk2-ansi-config
 %{__make}
 
 %install
