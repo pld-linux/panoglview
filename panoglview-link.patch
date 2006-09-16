@@ -1,0 +1,25 @@
+--- panoglview-0.2.1/configure.in.orig	2006-08-30 18:21:34.000000000 +0200
++++ panoglview-0.2.1/configure.in	2006-09-16 23:46:42.053177500 +0200
+@@ -61,9 +61,9 @@
+ 	])
+ else
+   if test "x$with_unicode" = 'xyes' ; then
+-	WX_GL_LIBS="`$WX_CONFIG_PATH --gl-libs`"
+-  else
+ 	WX_GL_LIBS="`$WX_CONFIG_PATH --unicode --gl-libs`"
++  else
++	WX_GL_LIBS="`$WX_CONFIG_PATH --gl-libs`"
+   fi
+   AC_SUBST(WX_GL_LIBS)
+ fi
+--- panoglview-0.2.1/src/Makefile.am.orig	2005-05-25 13:19:07.000000000 +0200
++++ panoglview-0.2.1/src/Makefile.am	2006-09-16 23:58:04.939855250 +0200
+@@ -4,7 +4,7 @@
+ 
+ panoglview_SOURCES = panoapp.cpp panoframe.cpp panointeractivecanvas.cpp panocanvas.cpp boundaries.cpp
+ panoglview_CXXFLAGS = $(WX_CXXFLAGS)
+-panoglview_LDADD = $(WX_LIBS) $(WX_GL_LIBS)
++panoglview_LDADD = $(WX_LIBS) $(WX_GL_LIBS) -lGL
+ 
+ noinst_HEADERS = panoapp.h panocanvas.h panoframe.h panoglplugin.h panopluginframe.h panointeractivecanvas.h boundaries.h
+ 
