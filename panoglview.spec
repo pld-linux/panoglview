@@ -1,5 +1,5 @@
 Summary:	OpenGL-based panorama viewer
-Summary(pl):	Oparta na OpenGL-u przegl±darka panoram
+Summary(pl.UTF-8):   Oparta na OpenGL-u przeglÄ…darka panoram
 Name:		panoglview
 Version:	0.2.1
 Release:	1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 OpenGL-based panorama viewer.
 
-%description -l pl
-Oparta na OpenGL-u przegl±darka panoram.
+%description -l pl.UTF-8
+Oparta na OpenGL-u przeglÄ…darka panoram.
 
 %prep
 %setup -q
