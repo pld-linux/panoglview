@@ -1,5 +1,5 @@
 Summary:	OpenGL-based panorama viewer
-Summary(pl.UTF-8):   Oparta na OpenGL-u przeglądarka panoram
+Summary(pl.UTF-8):	Oparta na OpenGL-u przeglądarka panoram
 Name:		panoglview
 Version:	0.2.1
 Release:	1
