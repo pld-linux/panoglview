@@ -1,12 +1,12 @@
 Summary:	OpenGL-based panorama viewer
 Summary(pl.UTF-8):	Oparta na OpenGL-u przeglądarka panoram
 Name:		panoglview
-Version:	0.2.1
+Version:	0.2.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Graphics
 Source0:	http://dl.sourceforge.net/hugin/%{name}-%{version}.tar.gz
-# Source0-md5:	0acb180b81997aa8c08d03ff9dfd2437
+# Source0-md5:	770a337c43cdd20be0347135ed1f597e
 Patch0:		%{name}-link.patch
 URL:		http://hugin.sourceforge.net/
 BuildRequires:	OpenGL-devel
@@ -47,5 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog
+%doc AUTHORS ChangeLog NEWS
 %attr(755,root,root) %{_bindir}/panoglview
