@@ -14,7 +14,8 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool >= 2:1.5
 #BuildRequires:	tuvista-devel (for plugin) - ??? found only tuvionlib and vistalab
-BuildRequires:	wxGTK2-gl-devel >= 2.6.0
+BuildRequires:	wxGTK2-unicode-devel >= 2.6.0
+BuildRequires:	wxGTK2-unicode-gl-devel >= 2.6.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,7 +34,8 @@ Oparta na OpenGL-u przeglądarka panoram.
 %{__autoconf}
 %{__automake}
 %configure \
-	WX_CONFIG_NAME=wx-gtk2-ansi-config
+	WX_CONFIG_NAME=wx-gtk2-unicode-config \
+	--with-unicode=yes
 %{__make}
 
 %install
